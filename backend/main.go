@@ -20,7 +20,7 @@ func main() {
 		log.Fatalf("failed to migrate database: %v", err)
 	}
 
-	r := server.New()
+	r := server.New(db.DB)
 	port := os.Getenv("APP_PORT")
 	if port == "" {
 		port = "8080"
